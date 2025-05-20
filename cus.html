@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customer - Online Service Booking System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    .container {
+      padding: 20px;
+    }
+    .services, .booking-form {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    footer {
+      background: #007bff;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 30px;
+    }
+    input, select, textarea, button {
+      display: block;
+      width: 100%;
+      padding: 8px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to the Online Repair Service Booking System</h1>
+    <p>Customer Dashboard</p>
+  </header>
+
+<nav>
+    <a href="dashboard.html">Home</a>
+    <a href="bookings.html">My Bookings</a>
+    <a href="cus profile.html">Profile</a>
+    <a href="logout.html">Logout</a>
+  </nav>
+  
+
+
+  <div class="container">
+    
+    <section class="services">
+      <h2>Available Services</h2>
+      
+      <input type="text" id="serviceSearch" placeholder="Search services..." onkeyup="filterServices()" />
+    
+      <ul id="serviceList">
+        <li>AC Repair</li>
+        <li>Plumbing</li>
+        <li>Electrical</li>
+        <li>Computer Service</li>
+        <li>Appliance Installation</li>
+      </ul>
+    </section>
+
+    <label for="serviceInput">Select or Search Service:</label>
+    <input list="services" id="serviceInput" name="service" required>
+    <datalist id="services">
+      <option value="AC Repair">
+      <option value="Plumbing">
+      <option value="Electrical">
+      <option value="Computer Service">
+      <option value="Appliance Installation">
+    </datalist>
+
+    <button onclick="selectService()">OK</button>
+
+    <p id="selectedServiceText" style="margin-top: 15px; font-weight: bold; color: green;"></p>
+  </div>
+
+  
+  <script>
+    function filterServices() {
+      const input = document.getElementById("serviceSearch");
+      const filter = input.value.toLowerCase();
+      const ul = document.getElementById("serviceList");
+      const li = ul.getElementsByTagName("li");
+
+      for (let i = 0; i < li.length; i++) {
+        const txtValue = li[i].textContent || li[i].innerText;
+        li[i].style.display = txtValue.toLowerCase().includes(filter) ? "" : "none";
+      }
+    }
+
+    function selectService() {
+      const selectedService = document.getElementById("serviceInput").value;
+      const display = document.getElementById("selectedServiceText");
+      if (selectedService.trim() !== "") {
+        display.textContent = "You selected: " + selectedService;
+      } else {
+        display.textContent = "Please select a service.";
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Technician Panel - Repair Booking System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f0f2f5;
+    }
+    .card {
+      border: none;
+      border-radius: 15px;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    .table th, .table td {
+      vertical-align: middle;
+    }
+    .status-badge {
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+    <a class="navbar-brand" href="#">Technician Panel</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="#">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="service.html">Service</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Payments</a></li>
+        <li class="nav-item"><a class="nav-link" href="techprofilre.html">Profile</a></li>
+
+        <li class="nav-item"><a class="nav-link text-danger" href="#">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container my-5">
+    <!-- Summary Cards -->
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card bg-primary text-white text-center p-4 shadow">
+          <h5>Total Bookings</h5>
+          <h2 id="totalBookings">15</h2>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card bg-success text-white text-center p-4 shadow">
+          <h5>Completed Jobs</h5>
+          <h2 id="completedJobs">12</h2>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card bg-warning text-dark text-center p-4 shadow">
+          <h5>Total Earnings</h5>
+          <h2 id="totalEarnings">$750</h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bookings Table -->
+    <div class="mt-5">
+      <h4 class="mb-3">Ongoing Bookings</h4>
+      <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle">
+          <thead class="table-dark">
+            <tr>
+              <th>#</th>
+              <th>Customer</th>
+              <th>Service</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="bookingTable">
+            <tr>
+              <td>001</td>
+              <td>Ahmed Rahman</td>
+              <td>AC Repair</td>
+              <td>2025-04-10</td>
+              <td><span class="badge bg-info status-badge">Pending</span></td>
+              <td><button class="btn btn-sm btn-success">Mark Complete</button></td>
+            </tr>
+            <tr>
+              <td>002</td>
+              <td>Sadia Akter</td>
+              <td>Washing Machine Fix</td>
+              <td>2025-04-11</td>
+              <td><span class="badge bg-warning text-dark status-badge">In Progress</span></td>
+              <td><button class="btn btn-sm btn-success">Mark Complete</button></td>
+            </tr>
+            <tr>
+              <td>003</td>
+              <td>Farid Hasan</td>
+              <td>Fridge Gas Refill</td>
+              <td>2025-04-12</td>
+              <td><span class="badge bg-info status-badge">Pending</span></td>
+              <td><button class="btn btn-sm btn-success">Mark Complete</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Repair Service</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: url('isto.jpg') no-repeat center center/cover fixed;
+            min-height: 100vh;
+        }
+        
+        .navbar-brand {
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        #head {
+            color: #000 !important; /* Forces black color */
+            text-shadow: none; /* Removes text shadow if needed */
+        }
+        #txt{
+            color: #000 !important; /* Forces black color */
+            text-shadow: none; /* Removes text shadow if needed */
+        }
+
+        .hero-section {
+            padding: 4rem 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .panel-container {
+            padding: 2rem 0;
+        }
+
+        .role-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            margin: 1rem;
+            min-height: 400px;
+        }
+
+        .role-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .login-btn {
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: auto;
+        }
+
+        .login-btn:hover {
+            background: #357abd;
+            transform: scale(1.05);
+        }
+
+        .role-title {
+            color: #2c3e50;
+            margin: 1rem 0;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            
+            .role-card {
+                margin: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">RepairService Pro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="text-white mb-3" id="head">Online Repair Service Booking System</h1>
+            <p class="lead text-white" id="txt">Fast, reliable, and professional technical support</p>
+        </div>
+    </section>
+   
+
+    <!-- Role Cards -->
+    <section class="panel-container">
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- Admin Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="card role-card">
+                        <img src="ad.png" class="card-img-top" alt="Admin">
+                        <div class="card-body">
+                            <h3 class="role-title">Administrator</h3>
+                            <button class="login-btn" onclick="location.href='panel login.html'">LOGIN</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technician Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="card role-card">
+                        <img src="tech.jpg" class="card-img-top" alt="Technician">
+                        <div class="card-body">
+                            <h3 class="role-title">Technician</h3>
+                            <button class="login-btn" onclick="location.href='panel login.html'">LOGIN</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customer Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="card role-card">
+                        <img src="cus.png" class="card-img-top" alt="Customer">
+                        <div class="card-body">
+                            <h3 class="role-title">Customer</h3>
+                            <button class="login-btn" onclick="location.href='panel login.html'">LOGIN</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
